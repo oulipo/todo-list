@@ -1,0 +1,12 @@
+<ul>
+    <li *ngFor="let todo of todos; index as i" 
+        [class.barre]="todo.estBarre === true"
+        (click)="toggleTodo(todo)"
+        >
+        {{ todo.libelle }}
+        <button (click)="delTodo(i)">supprimer</button>
+    </li>
+</ul>
+
+<input type="text" [(ngModel)]="inputTodo" />
+<button (click)="addTodo()">ajouter</button> 
